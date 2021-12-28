@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Incident Report</title>
+    <link rel="stylesheet" href="EIR.css">
+    <link rel="stylesheet" href="EIR.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="outline">
+        <header>
+            <img id="img" src="oneStaffLogo.png" height="100" width="400" alt="">
+            <div id="title">
+                <h2 >Employee Incident Report</h2>
+                <h5><i>Injury/Illness</i></h5>
+            </div>
+            <hr>
+            <div id="disclaimer">
+                <p>
+                <strong>Instructions:</strong> Employees shall use this form 
+                to report work-related injuries, 
+                illnesses which could have caused an 
+                injury or illness- no matter how minor. 
+                <strong>Timing:</strong> Employee completes the form during their work-shift 
+                (or within 24-hours of incident).
+                </p>
+            </div>
+        </header>
+        <form name="incidentReport" onsubmit="return formValidation();">
+        <!--Injury/Illness-->
+            <div class="fullRow" id="question1">
+                <span>I am reporting a work related:</span>
+                <input class="btn" type="radio" id="injury" name="injuryIll">
+                    <label for="injury">Injury</label>
+                <input class="btn" type="radio" id="illness" name="injuryIll">
+                    <label for="illness">Illness</label>
+            </div>
+        <!--Name-->
+            <div>
+            <div class="inputBox" id="question2">
+                <label for="name">YOUR NAME</label>
+                <input type="text" id="name">
+            </div>
+        <!--Job Title-->
+            <div class="inputBox" id="question3">
+                <label for="jobTitle">JOB TITLE</label>
+                <input type="text" id="jobTitle">
+            </div>
+        <!--Recruiter-->
+            <div class="inputBox" id="question4">
+                <label for="recruiterName">Recruiters Name</label>
+                <input type="text" id="recruiterName">
+            </div>
+        <!--Supervisor-->
+            <div class="inputBox" id="question6">
+                <label for="supervisor">Supervisor @ Facility Name</label>
+                <input type="text" id="supervisor">
+            </div>
+        <!--Reported to who-->
+            <div class="inputBox" id="question7">
+                <label for="report2">Who did you report it to?</label>
+                <input type="text" id="report2">
+            </div>
+        <!--Date of Incident-->
+            <div class="inputBox" id="question8">
+                <label for="date1">Date of incident</label>
+                <input type="date" id="date1">
+            </div>
+        <!--Time of Incident-->
+            <div class="inputBox" id="question9">
+                <label for="time1">Time of Incident</label>
+                <input type="time" id="time1">
+            </div>
+        <!--Time of Shift-->
+            <div class="inputBox" id="question10">
+                <label for="time2">Time you started shift</label>
+                <input type="time" id="time2">
+            </div>
+        <!--Witnesses-->
+            <div class="inputBox" id="question11">
+                <label for="witnesses">Names of witnesses(if any)?</label>
+                <input type="text" id="witnesses">
+            </div>
+        <!--Assisting-->
+            <div class="inputBox" id="question12">
+                <span>Was anyone assisting you at the time?</span>
+                <input class="btn" type="radio" id="assistYes" name="assisting">
+                <label for="assistYes">Yes</label>
+                <input class="btn" type="radio" id="illness" name="assisting">
+                <label for="assistNo">No</label>
+            </div>
+        <!--Who-->
+                <div class="inputBox" id="question13">
+                    <label for="witnesses2">Who</label>
+                    <input type="text" id="witnesses2">
+                </div>
+        <!--location-->
+                <div class="inputBox" id="question14">
+                    <div class="textArea1" id="question14a">
+                        <label for="whereHappen">
+                        Where exactly did it happen?
+                        <p id="smallEG">e.g., Room Number</p>
+                        </label>
+                    </div>
+                    <div class="textArea2" id="question14b">
+                        <textarea id="whereHappen" rows="4" cols="40">
+                        </textarea>
+                    </div>
+                </div>
+        <!--What were you doing-->
+                <div class="inputBox" id="question15">
+                    <div class="textArea1" id="question15a">
+                        <label for="whereDoing">
+                        What were you doing at the time?
+                        </label>
+                    </div>
+                    <div class="textArea2" id="question15b">
+                        <textarea id="whereDoing" rows="4" cols="40">
+                        </textarea>
+                    </div>
+                </div>
+        <!--Describe-->
+                <div class="inputBox" id="question16">
+                    <div class="textArea1" id="question16a">
+                        <label for="describe">
+                        Describe step by step what led to the incident
+                        </label>
+                    </div>
+                    <div class="textArea2" id="question16b">
+                        <textarea id="describe" rows="4" cols="40">
+                        </textarea>
+                    </div>
+                    <div class="textArea3" id="question16c">
+                        <label for="fileUpload">attach additional pages if necessary</label>
+                        <input id="fileUpLoad" type="file">
+                    </div>
+                </div>
+        <!--What body parts-->
+                <div class="inputBox" id="question17">
+                    <div class="textArea1" id="question17a">
+                        <label for="bodyParts">
+                        What part(s) of your body were injured?
+                        </label>
+                    </div>
+                    <div class="textArea2" id="question17b">
+                        <textarea id="bodyParts" rows="4" cols="40">
+                        </textarea>
+                    </div>
+                </div>
+        <!--Medical Treatment-->
+                <div class="inputBox" id="question18">
+                    <span>Did you get medical treatment?</span>
+                    <input class="btn" type="radio" id="treatmentYes" name="medTreat">
+                    <label for="treatmentYes">Yes</label>
+                    <input class="btn" type="radio" id="treatmentNo" name="medTreat">
+                    <label for="treatmentNo">No</label>
+                </div>
+        <!--who did you see-->
+                <div class="inputBox" id="question19">
+                    <label for="whoSee">If yes, who did you see?</label>
+                    <input type="text" id="whoSee">
+                </div>
+        <!--Doc #-->
+                <div class="inputBox" id="question20">
+                    <label for="docPhone">Doctor phone #</label>
+                    <input type="tel" id="docPhone">
+                </div>
+        <!--treatment Facility-->
+                <div class="inputBox" id="question21">
+                    <label for="treatmentFacility">Name/Address of treatment facility</label>
+                    <input type="text" id="treatmentFacility">
+                </div>
+        <!--hurt before-->
+                <div class="inputBox" id="question22">
+                    <span>Has this part of your body been injured before?</span>
+                    <input class="btn" type="radio" id="hurtYes" name="hurtB4">
+                    <label for="hurtYes">Yes</label>
+                    <input class="btn" type="radio" id="hurtNo" name="hurtB4">
+                    <label for="hurtNo">No</label>
+                </div>
+        <!--what happened-->
+                <div class="inputBox" id="question23">
+                    <label for="whatHappened">If, yes when & what happened?</label>
+                    <input type="text" id="whatHappened">
+                </div>
+            </div>
+        <!--body diagram-->
+            <div class="container input">
+                <div class="option">
+                    <div class="rgb"></div>
+                    <div class="brush"></div>
+                </div>
+                <h4>Part of body affected</h4>
+                <h6>(circle all that apply)</h6>
+                <canvas id="canvas" width="500" height="365"></canvas>
+                <br>
+                <button id="btnClear">Clear</button>
+            </div>
+        <!--sign and date-->
+            <div>
+                <div class="inputBox" id="signature">
+                    <label for="signa">Employee Signature:</label>
+                    <input type="text" id="signa"><br>
+                    <label for="date1">Date of incident</label>
+                    <input type="date" id="date1"><br>
+                </div>
+            </div>
+            <div id="lastThing">
+                <input id="submit" type="submit" name="incidentReport">
+            </div>
+            <script type="text/javascript" src="EIR.js"></script>
+            <script>
+                let canvas = document.getElementById("canvas");
+        
+                let btnClear = document.getElementById("btnClear");
+                btnClear.onclick = () => {
+                    freehand.clearCanvas();
+                }
+            </script>
+        </form>
+    </div>     
+</body>
+</html>
